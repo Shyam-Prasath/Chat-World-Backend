@@ -77,7 +77,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
   try {
     if (!req.file) return res.status(400).send({ message: 'No file uploaded' });
 
-    const fileUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+    const fileUrl = `https://chat-world-backend-9ihy.onrender.com/uploads/${req.file.filename}`;
     console.log('File uploaded successfully:', req.file.filename);
 
     res.json({
