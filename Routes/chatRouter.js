@@ -1,0 +1,11 @@
+const express=require('express')
+const {accessChat, fetchChat, createGroup, fetchGroup, deleteGroup, addSelfUser}=require('../controller/chatController')
+const {protect} = require('../middleware/authmiddleware')
+const Router=express.Router()
+Router.post('/',protect,accessChat)
+Router.get('/',protect,fetchChat)
+Router.post('/createGroup',protect,createGroup)
+Router.get('/fetchGroup',protect,fetchGroup)
+Router.put('/deleteGroup',protect,deleteGroup)
+Router.put('/addSelfUser',protect,addSelfUser)
+module.exports=Router
